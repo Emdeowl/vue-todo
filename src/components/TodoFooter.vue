@@ -10,7 +10,6 @@
 export default {
   methods:{
     ClearTodo:function(){
-      
       localStorage.clear();
     }
   }
