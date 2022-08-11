@@ -1,7 +1,6 @@
 <template>
   <div class="inputBox shadow" >
     <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodo">
-    <!-- <button v-on:click="addTodo">add</button> -->
     <span class="addContainer" v-on:click="addTodo">
       <i class="fa-solid fa-plus addBtn"></i>
     </span>
@@ -18,13 +17,7 @@ export default {
   methods:{
     addTodo:function(){
       if(this.newTodoItem !=''){   // newTodoItem에 값이 있을때 저장이 된다.
-        var obj={
-        completed:false, item:this.newTodoItem
-       };
-        // console.log(this.newTodoItem);
-        //클릭 후 저장하는 로직
-        localStorage.setItem(this.newTodoItem,JSON.stringify(obj));
-        // JSON.stringify는 obj라는 객체값을 문자열로 바꿔준다.
+        this.$emit('addTodoItem',this.newTodoItem)
         this.clearInput();
         }
       },    
