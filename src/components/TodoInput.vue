@@ -4,23 +4,41 @@
     <span class="addContainer" v-on:click="addTodo">
       <i class="fa-solid fa-plus addBtn"></i>
     </span>
+
+    <Modal v-if="showModal" @close="showModal = false">
+      <h3 slot="header">경고 !
+        <i class="fa-solid fa-xmark clsoeModalBtn" @click="showModal=false" ></i>
+      </h3>
+      <h3 slot="body">아무것도 입력하지 않았습니다</h3>
+      <h3 slot="footer">모달 Footer임</h3>
+    </Modal>
   </div>
 </template>
 
 <script>
+  import Modal from'./common/Modal-Common.vue'
 export default {
+
   data:function(){
     return{
-      newTodoItem:''
+      newTodoItem:'',
+      showModal: false
     }
   },
+  components:{
+        Modal:Modal
+      } ,
   methods:{
     addTodo:function(){
-      if(this.newTodoItem !=''){   // newTodoItem에 값이 있을때 저장이 된다.
+      if(this.newTodoItem !== ''){   // newTodoItem에 값이 있을때 저장이 된다.
         this.$emit('addTodoItem',this.newTodoItem)
         this.clearInput();
+       
+        } else{
+            this.showModal = !this.showModal;
         }
-      },    
+      },   
+      
       
       clearInput:function(){
           // add를 누fm 면 화면 input 비우기 
@@ -54,5 +72,8 @@ export default {
  .addBtn{
   color :white;
   vertical-align: middle;
+ }
+ .clsoeModalBtn{
+  color:#42b983;
  }
 </style> 
