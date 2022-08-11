@@ -11,7 +11,7 @@ export default {
 </script>  
 
 <style scoped>
-/* 컴포넌트 안에서만 유효한 설정 */
+/*  scoped = 컴포넌트 안에서만 유효한 설정 */
 h1{
   color:#2F3B52; 
   font-weight: 900;;
