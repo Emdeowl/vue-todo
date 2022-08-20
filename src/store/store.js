@@ -23,6 +23,6 @@ const storage={
 export const store = new Vuex.Store({
     state:{
         // headerText:'TODO it!'
-        TodoItems:storage.fetch()   // App.vue의 TodoItems를 여기서 사용할거야
+        todoitems:storage.fetch()   // App.vue의 todoitems 여기서 사용할거야
     }
 });
