@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Todo-Header></Todo-Header>
-    <Todo-Input v-on:addTodoItem="addOneItem"></Todo-Input>
+    <Todo-Input></Todo-Input>  
     <Todo-List v-bind:propsdata="todoitems" v-on:removeItem="removeOneItem" v-on:toggleItem="toggleOneItem"></Todo-List>
     <Todo-Footer v-on:clearAll="clearAllItem"></Todo-Footer>
   </div>
@@ -20,15 +20,11 @@ export default {
     }
   },
   methods:{
-    addOneItem(todoItem){
-         const obj={completed:false, item:todoItem};  //completed를 통하여 상태 부여
-        localStorage.setItem(todoItem,JSON.stringify(obj));  // JSON.stringify는 obj라는 객체값을 문자열로 바꿔준다.
-        this.todoitems.push(obj); 
-    },
-    removeOneItem(todoitem,index){
-       this.todoitems.splice(index,1); // 선택한 index의 배열의 index에서 splice를 통하여 삭제한다. 
-      localStorage.removeItem(todoitem.item); // 로직에 있는 obj안 item을 제거
-    },
+
+    // removeOneItem(todoitem,index){
+    //    this.todoitems.splice(index,1); // 선택한 index의 배열의 index에서 splice를 통하여 삭제한다. 
+    //   localStorage.removeItem(todoitem.item); // 로직에 있는 obj안 item을 제거
+    // },
     toggleOneItem(todoItem,index){
       //  todoItem.completed= !todoItem.completed;
         this.todoitems[index].completed = !this.todoitems[index].completed
@@ -43,8 +39,6 @@ export default {
        this.todoitems=[];
     }
   },
-  
-
   components:{
     TodoHeader,
     TodoInput,

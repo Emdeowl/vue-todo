@@ -14,14 +14,20 @@
 
 <script>
 export default {
-   props:['propsdata'],
+   
 
     methods:{
     removeTodo(todoitem,index){
       this.$emit('removeItem',todoitem,index);
+      this.$store.commit('removeOneItem',);
     },
     toggleComplete(todoitem,index){
-      this.$emit('toggleItem',todoitem,index)
+      const obj={
+        todoitem,
+        index
+      }
+      this.$emit('toggleItem',obj)
+      // 이런 형태도 가능함.
     }
   },
 
