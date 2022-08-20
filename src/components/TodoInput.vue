@@ -6,11 +6,17 @@
     </span>
 
     <Modal v-if="showModal" @close="showModal = false">
-      <h3 slot="header">경고 !
-        <i class="fa-solid fa-xmark clsoeModalBtn" @click="showModal=false" ></i>
+        
+      <h3 slot="header">경고
+         <!-- showModal === false가 되면  v-if가 false가 되서 modal 창이 아예 닫히게 된다.  -->
+        <i class="fa-solid fa-xmark clsoeModalBtn" @click="showModal=false" ></i>      <!--  X 아이콘 -->
+        <!-- slot은 수정하기 어려운 다른 component의 template를 수정할수 있다.  -->
       </h3>
-      <h3 slot="body">아무것도 입력하지 않았습니다</h3>
-      <h3 slot="footer">모달 Footer임</h3>
+      <div slot="body">
+        <h3> 아무것도 입력하지 않았습니다.</h3>
+      </div>
+      <!-- <h3 slot="body">아무것도 입력하지 않았습니다</h3> -->
+      
     </Modal>
   </div>
 </template>

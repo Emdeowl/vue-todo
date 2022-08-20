@@ -21,7 +21,7 @@ export default {
   },
   methods:{
     addOneItem:function(todoItem){
-         var obj={completed:false, item:todoItem};  //completed를 통하여 상태 부여
+         const obj={completed:false, item:todoItem};  //completed를 통하여 상태 부여
         localStorage.setItem(todoItem,JSON.stringify(obj));  // JSON.stringify는 obj라는 객체값을 문자열로 바꿔준다.
         this.todoitems.push(obj); 
     },
@@ -45,7 +45,7 @@ export default {
   },
   created:function(){
     if(localStorage.length>0){
-      for(var i=0;i<localStorage.length ;i++)
+      for(let i=0;i<localStorage.length ;i++) //var -> let으로 변환, 반복문은 const로 하면 돌아가지 않음 재 할당이 안되기 떄문이다.
       {
         // console.log(localStorage.key(i ));
         if(localStorage.key(i) !== 'loglevel:webpack-dev-server ')

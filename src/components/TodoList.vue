@@ -1,11 +1,11 @@
 <template>
   <div> 
-    <transition-group name="list" tag="ul">
+    <transition-group name="list" tag="ul"> <!-- name이  css와 연결되는거임 -->
       <li v-for="(todoitem, index) in propsdata" v-bind:key="todoitem.item " class="shadow">
         <i class="checkBtn fa-solid fa-check" v-bind:class="{checkBtnCompleted:todoitem.completed}" v-on:click="toggleComplete(todoitem,index)"></i>
           <span v-bind:class="{textCompleted:todoitem.completed}"> {{ todoitem.item }}</span>
-          <span claas="removeBtn" v-on:click="removeTodo(todoitem,index)">
-            <i class="fa-regular fa-trash-can"></i>
+          <span class="removeBtn" v-on:click="removeTodo(todoitem,index)">
+            <i class="fa-regular fa-trash-can "></i>
          </span>
       </li>
     </transition-group>
@@ -64,13 +64,13 @@ li{
   text-decoration: line-through;
   color:#b3adad;
 }
-/* 리스트 아이템  */
+/* 리스트 아이템  트랜잭션 효과  - 부드럽게 들어오며 부드럽게 빠져  나간다. */
 .list-enter-active, .list-leave-active {
-  transition: all 1s;
+  transition: all 1s; /* 효과 시속 시간 */ 
 }
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 0;  /* 불투명도 */ 
+  transform: translateY(30px);  /* Y축으로 30px 움직임 */
 }
 
 </style>
