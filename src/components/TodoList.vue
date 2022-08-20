@@ -1,7 +1,7 @@
 <template>
   <div> 
     <transition-group name="list" tag="ul"> <!-- name이  css와 연결되는거임 -->
-      <li v-for="(todoitem, index) in propsdata" v-bind:key="todoitem.item " class="shadow">
+      <li v-for="(todoitem, index) in this.$store.state.TodoItems" v-bind:key="todoitem.item " class="shadow">
         <i class="checkBtn fa-solid fa-check" v-bind:class="{checkBtnCompleted:todoitem.completed}" v-on:click="toggleComplete(todoitem,index)"></i>
           <span v-bind:class="{textCompleted:todoitem.completed}"> {{ todoitem.item }}</span>
           <span class="removeBtn" v-on:click="removeTodo(todoitem,index)">
