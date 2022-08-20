@@ -18,16 +18,11 @@ export default {
 
     methods:{
     removeTodo(todoitem,index){
-      this.$emit('removeItem',todoitem,index);
-      this.$store.commit('removeOneItem',);
+       this.$store.commit('removeOneItem',{todoitem,index});
+      //바로 객체화 해서 선언함.
     },
     toggleComplete(todoitem,index){
-      const obj={
-        todoitem,
-        index
-      }
-      this.$emit('toggleItem',obj)
-      // 이런 형태도 가능함.
+      this.$store.commit('toggleOneItem',{todoitem,index})
     }
   },
 
