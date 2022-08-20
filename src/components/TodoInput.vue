@@ -32,7 +32,7 @@ export default {
     }
   },
   components:{
-        Modal:Modal
+        Modal
       } ,
   methods:{
     addTodo(){

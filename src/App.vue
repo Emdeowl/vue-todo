@@ -58,10 +58,10 @@ export default {
   },
 
   components:{
-    'Todo-Header':TodoHeader,
-    'Todo-Input':TodoInput,
-    'Todo-List':TodoList,
-    'Todo-Footer':TodoFooter 
+    TodoHeader,
+    TodoInput,
+    TodoList,
+    TodoFooter 
   }
 }
 </script>
