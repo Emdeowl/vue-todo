@@ -25,7 +25,7 @@
   import Modal from'./common/Modal-Common.vue'
 export default {
 
-  data:function(){
+  data(){
     return{
       newTodoItem:'',
       showModal: false
@@ -35,7 +35,7 @@ export default {
         Modal:Modal
       } ,
   methods:{
-    addTodo:function(){
+    addTodo(){
       if(this.newTodoItem !== ''){   // newTodoItem에 값이 있을때 저장이 된다.
         this.$emit('addTodoItem',this.newTodoItem)
         this.clearInput();
@@ -46,7 +46,7 @@ export default {
       },   
       
       
-      clearInput:function(){
+      clearInput(){
           // add를 누fm 면 화면 input 비우기 
       this.newTodoItem="";
       }
