@@ -14,8 +14,6 @@
 
 <script>
 export default {
-   
-
     methods:{
     removeTodo(todoitem,index){
        this.$store.commit('removeOneItem',{todoitem,index});
