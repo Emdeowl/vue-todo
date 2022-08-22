@@ -37,7 +37,8 @@ export default {
   methods:{
     addTodo(){
       if(this.newTodoItem !== ''){   // newTodoItem에 값이 있을때 저장이 된다.
-        this.$emit('addTodoItem',this.newTodoItem)
+      // const text= this.newTodoItem.trim();
+        this.$store.commit('addOneItem',this.newTodoItem);
         this.clearInput();
        
         } else{
