@@ -14,9 +14,7 @@
       </h3>
       <div slot="body">
         <h3> 아무것도 입력하지 않았습니다.</h3>
-      </div>
-      <!-- <h3 slot="body">아무것도 입력하지 않았습니다</h3> -->
-      
+      </div> 
     </Modal>
   </div>
 </template>
@@ -44,9 +42,7 @@ export default {
         } else{
             this.showModal = !this.showModal;
         }
-      },   
-      
-      
+      },  
       clearInput(){
           // add를 누fm 면 화면 input 비우기 
       this.newTodoItem="";

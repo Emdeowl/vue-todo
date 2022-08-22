@@ -25,9 +25,13 @@ export const store = new Vuex.Store({
         // headerText:'TODO it!'
         todoitems:storage.fetch()   // App.vue의 todoitems 여기서 사용할거야
     },
+    getters:{
+         storedTodoItems(state){
+            return state.todoitems;
+         }
+    },
     mutations:{
         addOneItem(state,todoItem ){
-            // console.log('test');
             const obj={completed:false, item:todoItem};  //completed를 통하여 상태 부여
             localStorage.setItem(todoItem,JSON.stringify(obj));  // JSON.stringify는 obj라는 객체값을 문자열로 바꿔준다.
             state.todoitems.push(obj); 

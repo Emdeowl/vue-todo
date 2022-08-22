@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <Todo-Header></Todo-Header>
-    <Todo-Input></Todo-Input>  
-    <Todo-List></Todo-List>
-    <Todo-Footer></Todo-Footer>
+    <TodoHeader></TodoHeader>
+    <TodoInput></TodoInput>  
+    <TodoList></TodoList>
+    <TodoFooter></TodoFooter>
   </div>
 </template>
 
@@ -14,11 +14,6 @@ import TodoList from './components/TodoList.vue'
 import TodoFooter from './components/TodoFooter.vue'
 
 export default {
-  data(){
-    return{
-      todoitems:[]  // 할 일 데이터
-    }
-  },
   components:{
     TodoHeader,
     TodoInput,
